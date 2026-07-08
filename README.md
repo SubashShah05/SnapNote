@@ -3,9 +3,9 @@
 
 SnapNote is a feature-rich, modern note-taking application designed for speed, simplicity, and productivity. It delivers a seamless writing experience with a beautiful interface, secure authentication, and intelligent search capabilities.
 
-🌐 Live Demo
+ 🌐 Live Demo
 
- (https://snapnote-37.onrender.com)
+https://snapnote-37.onrender.com
 
 🚀 About the Project
 
