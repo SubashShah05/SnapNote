@@ -42,12 +42,12 @@ function Home() {
       </div>
     )
   }
-  
-  if(notes.length === 0){
+
+  if (!notes || notes.length === 0) {
     return (
       <div className='flex justify-center items-center min-h-[60vh]'>
         <div className='text-center'>
-          <p className='text-lg text-gray-400 mb-4'>No notes available.</p>
+          <p className='text-lg text-white-muted mb-4'>No notes yet.</p>
           <p className='text-gray-500'>Create your first note to get started!</p>
         </div>
       </div>
@@ -58,7 +58,7 @@ function Home() {
     return (
       <div className='flex justify-center items-center min-h-[60vh]'>
         <div className='text-center'>
-          <p className='text-lg text-gray-400 mb-2'>No notes found for "{searchTerm}"</p>
+          <p className='text-lg text-white-muted mb-2'>No notes found for "{searchTerm}"</p>
           <p className='text-gray-500'>Try different keywords</p>
         </div>
       </div>

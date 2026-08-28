@@ -64,7 +64,7 @@ function Notecard({note}) {
           </p>
 
           {/* Footer: date + actions */}
-          <div className="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-white-muted">
             <span>
               {new Date(note.createdAt).toLocaleDateString("en-GB", {
                 day: "numeric",

@@ -1,3 +1,114 @@
+@import '@uiw/react-md-editor/markdown-editor.css';
+@import '@uiw/react-markdown-preview/markdown.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── MDEditor dark theme overrides ── */
+[data-color-mode="dark"] .w-md-editor {
+  background: transparent !important;
+  color: #e5e7eb !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+[data-color-mode="dark"] .w-md-editor-toolbar {
+  background: #111118 !important;
+  border-bottom: 1px solid #1e1e2e !important;
+}
+[data-color-mode="dark"] .w-md-editor-toolbar ul li button {
+  color: #9ca3af !important;
+}
+[data-color-mode="dark"] .w-md-editor-toolbar ul li button:hover,
+[data-color-mode="dark"] .w-md-editor-toolbar ul li.active button {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.08) !important;
+}
+[data-color-mode="dark"] .w-md-editor-text-input,
+[data-color-mode="dark"] .w-md-editor-text {
+  background: transparent !important;
+  color: #e5e7eb !important;
+  caret-color: #4f6ef7 !important;
+}
+[data-color-mode="dark"] .wmde-markdown {
+  background: transparent !important;
+  color: #d1d5db !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+[data-color-mode="dark"] .wmde-markdown h1,
+[data-color-mode="dark"] .wmde-markdown h2,
+[data-color-mode="dark"] .wmde-markdown h3,
+[data-color-mode="dark"] .wmde-markdown h4 {
+  color: #ffffff !important;
+  border-color: #1e1e2e !important;
+}
+[data-color-mode="dark"] .wmde-markdown code {
+  background: #16161f !important;
+  color: #a78bfa !important;
+}
+[data-color-mode="dark"] .wmde-markdown pre {
+  background: #16161f !important;
+}
+[data-color-mode="dark"] .wmde-markdown blockquote {
+  border-left-color: #4f6ef7 !important;
+  color: #9ca3af !important;
+}
+[data-color-mode="dark"] .wmde-markdown a {
+  color: #4f6ef7 !important;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a0f; }
+  ::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4f6ef7; }
+
+  /* Focus visible for accessibility */
+  :focus-visible {
+    outline: 2px solid #4f6ef7;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #4f6ef7 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Noise texture overlay */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

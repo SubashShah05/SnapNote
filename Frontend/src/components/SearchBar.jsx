@@ -55,14 +55,14 @@ function SearchBar() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-64 px-4 py-2 pl-10 pr-10 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none border border-gray-700"
             />
-            <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-2.5 w-4 h-4 text-white-muted" />
             {searchQuery && (
               <button
                 type="button"
                 onClick={clearSearch}
                 className="absolute right-3 top-2.5"
               >
-                <X className="w-4 h-4 text-gray-400 hover:text-white" />
+                <X className="w-4 h-4 text-white-muted hover:text-white" />
               </button>
             )}
           </div>
@@ -91,14 +91,14 @@ function SearchBar() {
                 className="w-full px-4 py-2 pl-10 pr-10 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none border border-gray-700"
                 autoFocus
               />
-              <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-2.5 w-4 h-4 text-white-muted" />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={clearSearch}
                   className="absolute right-3 top-2.5"
                 >
-                  <X className="w-4 h-4 text-gray-400 hover:text-white" />
+                  <X className="w-4 h-4 text-white-muted hover:text-white" />
                 </button>
               )}
             </div>

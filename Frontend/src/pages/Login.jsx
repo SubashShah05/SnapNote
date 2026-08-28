@@ -9,7 +9,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!email || !password) {
@@ -17,10 +17,10 @@ function Login() {
       return;
     }
 
-    const result = login(email, password);
+    const result = await login(email, password);
     
     if (result.success) {
-      navigate("/"); // Go to notes app only after successful login
+      navigate("/dashboard");
     } else {
       setError(result.error);
     }
@@ -60,7 +60,7 @@ function Login() {
           >
             Login
           </button>
-          <p className="text-center text-gray-400">
+          <p className="text-center text-white-muted">
             Don't have an account?{" "}
             <Link to="/register" className="text-blue-400 hover:underline">
               Sign up first

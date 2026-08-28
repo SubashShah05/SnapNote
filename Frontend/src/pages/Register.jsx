@@ -14,7 +14,7 @@ function Register() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validation
@@ -33,12 +33,12 @@ function Register() {
       return;
     }
 
-    const result = register(formData.name, formData.email, formData.password);
+    const result = await register(formData.name, formData.email, formData.password);
     
     if (result.success) {
       setSuccess("Registration successful! Please login to continue.");
       setTimeout(() => {
-        navigate("/login"); // Redirect to login page after 2 seconds
+        navigate("/login");
       }, 2000);
     } else {
       setError(result.error);
@@ -101,7 +101,7 @@ function Register() {
           >
             Sign Up
           </button>
-          <p className="text-center text-gray-400">
+          <p className="text-center text-white-muted">
             Already have an account?{" "}
             <Link to="/login" className="text-blue-400 hover:underline">
               Login here

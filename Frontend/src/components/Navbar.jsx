@@ -31,7 +31,7 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate("/login");
+    navigate("/");
   };
 
   // Close dropdowns on click outside
@@ -105,14 +105,14 @@ function Navbar() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2 pl-10 pr-10 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none border border-gray-700"
                 />
-                <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3 top-2.5 w-4 h-4 text-white-muted" />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={clearSearch}
                     className="absolute right-3 top-2.5"
                   >
-                    <X className="w-4 h-4 text-gray-400 hover:text-white" />
+                    <X className="w-4 h-4 text-white-muted hover:text-white" />
                   </button>
                 )}
               </div>
@@ -122,9 +122,9 @@ function Navbar() {
           {/* Navigation Links */}
           <div className="flex items-center space-x-4">
             <Link 
-              to="/" 
+              to="/dashboard" 
               className={`px-3 py-2 rounded-lg transition ${
-                location.pathname === "/" 
+                location.pathname === "/dashboard" 
                   ? "text-blue-400 font-semibold bg-blue-400/10" 
                   : "text-gray-300 hover:text-blue-400 hover:bg-gray-800"
               }`}
@@ -158,7 +158,7 @@ function Navbar() {
                 <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-1">
                   <div className="px-4 py-2 border-b border-gray-700">
                     <p className="text-sm font-medium text-white">{user?.name}</p>
-                    <p className="text-xs text-gray-400 truncate">{user?.email}</p>
+                    <p className="text-xs text-white-muted truncate">{user?.email}</p>
                   </div>
                   <button
                     onClick={handleLogout}
@@ -210,10 +210,10 @@ function Navbar() {
                   <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-1">
                     <div className="px-4 py-2 border-b border-gray-700">
                       <p className="text-sm font-medium text-white">{user?.name}</p>
-                      <p className="text-xs text-gray-400">{user?.email}</p>
+                      <p className="text-xs text-white-muted">{user?.email}</p>
                     </div>
                     <Link
-                      to="/"
+                      to="/dashboard"
                       className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                       onClick={() => setIsProfileOpen(false)}
                     >
@@ -255,14 +255,14 @@ function Navbar() {
                     className="w-full px-4 py-2 pl-10 pr-10 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none border border-gray-700"
                     autoFocus
                   />
-                  <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+                  <Search className="absolute left-3 top-2.5 w-4 h-4 text-white-muted" />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={clearSearch}
                       className="absolute right-3 top-2.5"
                     >
-                      <X className="w-4 h-4 text-gray-400 hover:text-white" />
+                      <X className="w-4 h-4 text-white-muted hover:text-white" />
                     </button>
                   )}
                 </div>
