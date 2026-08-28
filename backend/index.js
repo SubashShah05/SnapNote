@@ -73,6 +73,7 @@ const allowedOrigins = [
   "http://localhost:5173", // Development
   "http://localhost:5174", // Development (alternate)
   "https://snapnote.app",  // Production
+   "https://snap-note-yk7l.vercel.app"
 ];
 app.use(cors({
   origin: (origin, callback) => {
