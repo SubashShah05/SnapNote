@@ -5,7 +5,7 @@ SnapNote is a feature-rich, modern note-taking application designed for speed, s
 
 ## 🌐 Live Demo
 
-🚀 **[https://snapnote-37.onrender.com](https://snapnote-37.onrender.com)**
+https://snap-note-yk7l.vercel.app/
 
 ---
 
